@@ -1,0 +1,171 @@
+@use '../variables' as *;
+@use "sass:color";
+
+.header {
+    background-color: $primary-color;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: $shadow-sm;
+    color: $light-gray;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-secondary;
+        text-decoration: none;
+        z-index: 1001;
+        display: flex;
+        max-height: 50px;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__nav {
+        @include tablet {
+            display: block;
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            background: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: ($breakpoint-tablet - 1px)) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: $color-white;
+            padding: 5rem 2rem 2rem;
+            transition: right 0.3s ease;
+            box-shadow: $shadow-md;
+
+            &.active {
+                right: 0;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: ($breakpoint-tablet - 1px)) {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @include tablet {
+            gap: 2rem;
+        }
+    }
+
+    &__menu-link {
+        color: $light-gray;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
+
+        &:hover {
+            color: $color-secondary;
+        }
+
+        &.active {
+            color: $color-secondary;
+        }
+
+        @media (max-width: ($breakpoint-tablet - 1px)) {
+            font-size: 1.2rem;
+            padding: 0.8rem 0;
+        }
+    }
+
+    &__menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+        width: 30px;
+        height: 30px;
+        position: relative;
+
+        @media (max-width: ($breakpoint-tablet - 1px)) {
+            display: block;
+        }
+
+        span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: $color-white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 2.5px;
+        }
+
+        span:nth-child(1) {
+            top: 5px;
+        }
+
+        span:nth-child(2) {
+            top: 14px;
+        }
+
+        span:nth-child(3) {
+            top: 23px;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                transform: rotate(45deg);
+                top: 14px;
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 14px;
+            }
+        }
+    }
+}
+
+// Mobile menu active state
+.nav__list.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    padding: 1rem;
+    box-shadow: $shadow;
+} 

@@ -1,0 +1,92 @@
+@use '../variables' as *;
+@use "sass:color";
+
+.nosotros {
+    padding: 5rem 0;
+    background-color: $color-bg-light;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &__title {
+        text-align: center;
+        color: $color-primary;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: $color-text;
+            text-align: justify;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: $shadow;
+    }
+
+    &__features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__feature {
+        background-color: white;
+        padding: 2rem;
+        border-radius: $border-radius;
+        box-shadow: $shadow-sm;
+        transition: all 0.3s ease;
+        text-align: center;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $shadow-md;
+        }
+
+        i {
+            font-size: 2.5rem;
+            color: $color-secondary;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            color: $color-secondary;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: $color-text;
+            line-height: 1.6;
+        }
+    }
+} 

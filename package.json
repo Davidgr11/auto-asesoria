@@ -1,0 +1,23 @@
+{
+  "name": "auto-asesoria",
+  "version": "1.0.0",
+  "description": "Landing page para asesoría automotriz",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/styles.scss css/styles.css",
+    "sass:watch": "sass --watch scss/styles.scss css/styles.css",
+    "start": "live-server"
+  },
+  "keywords": [
+    "landing-page",
+    "auto",
+    "cotizador",
+    "responsive"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.69.5"
+  }
+} 

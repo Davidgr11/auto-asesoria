@@ -1,0 +1,26 @@
+@use '../variables' as *;
+
+.spinner {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+    &.active {
+        display: flex;
+    }
+
+    &__inner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba($secondary-color, 0.2);
+        border-top: 4px solid $secondary-color;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

@@ -1,0 +1,86 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'components/header';
+@use 'components/hero';
+@use 'components/cotizador';
+@use 'components/nosotros';
+@use 'components/contacto';
+@use 'components/footer';
+@use 'components/spinner';
+
+
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$text-color: #333;
+$light-gray: #f5f6fa;
+$white: #ffffff;
+$shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Mixins
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $color-text;
+    background-color: $color-bg-light;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+// Utilidades
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.mb-5 { margin-bottom: $spacing-xl; }
+
+.mt-1 { margin-top: $spacing-xs; }
+.mt-2 { margin-top: $spacing-sm; }
+.mt-3 { margin-top: $spacing-md; }
+.mt-4 { margin-top: $spacing-lg; }
+.mt-5 { margin-top: $spacing-xl; }

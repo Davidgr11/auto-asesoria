@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Asesoría - Cotizador de Autos</title>
+    <link rel="icon" href="img/Rent.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="img/Rent.png" class="header__logo" alt="logo">
+            <a href="#" class="header__logo">Auto Asesoría</a>
+            </div>
+            <button class="header__menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li><a href="#inicio" class="header__menu-link">Inicio</a></li>
+                    <li><a href="#nosotros" class="header__menu-link">Nosotros</a></li>
+                    <li><a href="#cotizador" class="header__menu-link">Cotizador</a></li>
+                    <li><a href="#contacto" class="header__menu-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero__container">
+                <h1 class="hero__title">Encuentra el Auto Perfecto</h1>
+                <p class="hero__subtitle">Cotiza y compara diferentes modelos de autos de manera fácil y rápida</p>
+                <a href="#cotizador" class="hero__cta">Cotizar Ahora</a>
+            </div>
+        </section>
+
+        <section id="nosotros" class="nosotros">
+            <div class="nosotros__container">
+                <h2 class="nosotros__title">¿Por qué elegirnos?</h2>
+                <div class="nosotros__content">
+                    <div class="nosotros__text">
+                        <p>En Auto Asesoría nos especializamos en ayudarte a encontrar el auto perfecto que se ajuste a tus necesidades y presupuesto. Nuestro equipo de expertos te guiará en todo el proceso.</p>
+                        <p>Con años de experiencia en el mercado automotriz, ofrecemos un servicio personalizado y transparente para que tomes la mejor decisión.</p>
+                    </div>
+                    <div class="nosotros__features">
+                        <div class="nosotros__feature">
+                            <i class="fas fa-car-alt nosotros__icon"></i>
+                            <h3 class="nosotros__feature-title">Amplia Selección</h3>
+                            <p>Contamos con una gran variedad de marcas y modelos para elegir.</p>
+                        </div>
+                        <div class="nosotros__feature">
+                            <i class="fas fa-hand-holding-usd nosotros__icon"></i>
+                            <h3 class="nosotros__feature-title">Mejores Precios</h3>
+                            <p>Garantizamos los mejores precios del mercado para tu auto.</p>
+                        </div>
+                        <div class="nosotros__feature">
+                            <i class="fas fa-headset nosotros__icon"></i>
+                            <h3 class="nosotros__feature-title">Soporte 24/7</h3>
+                            <p>Nuestro equipo está disponible para ayudarte en cualquier momento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cotizador" id="cotizador">
+            <div class="container">
+                <h2 class="cotizador__title">Cotizador de Autos</h2>
+                <form id="cotizador-form" class="cotizador__form">
+                    <div class="cotizador__form-group">
+                        <label for="marca" class="cotizador__label">Marca</label>
+                        <select id="marca" class="cotizador__select">
+                            <option value="">Seleccione...</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Hyundai">Hyundai</option>
+                        </select>
+                    </div>
+
+                    <div class="cotizador__form-group">
+                        <label for="modelo" class="cotizador__label">Modelo</label>
+                        <select id="modelo" class="cotizador__select">
+                            <option value="">Seleccione...</option>
+                        </select>
+                    </div>
+
+                    <div class="cotizador__form-group">
+                        <label for="anio" class="cotizador__label">Año</label>
+                        <select id="anio" class="cotizador__select">
+                            <option value="">Seleccione...</option>
+                        </select>
+                    </div>
+
+                    <div class="cotizador__form-group">
+                        <label for="transmision" class="cotizador__label">Transmisión</label>
+                        <select id="transmision" class="cotizador__select">
+                            <option value="">Seleccione...</option>
+                            <option value="automatico">Automático</option>
+                            <option value="manual">Manual</option>
+                        </select>
+                    </div>
+
+                    <div class="cotizador__form-group">
+                        <label class="cotizador__label" for="puertas">Puertas:</label>
+                        <select class="cotizador__select" id="puertas" name="puertas">
+                            <option value="">Seleccione...</option>
+                            <option value="2">2 puertas</option>
+                            <option value="4">4 puertas</option>
+                        </select>
+                    </div>
+
+                    <div class="cotizador__form-group">
+                        <button type="button" id="limpiar-filtros" class="cotizador__btn-limpiar">Limpiar Filtros</button>
+                    </div>
+                </form>
+
+                <div id="spinner" class="spinner">
+                    <div class="spinner__inner"></div>
+                </div>
+
+                <div id="resultados" class="cotizador__resultados" style="display: none;">
+                    <h3 class="cotizador__resultados-title"></h3>
+                    <div class="cotizador__resultados-grid"></div>
+                    <div class="cotizador__paginacion"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="contacto__container">
+                <h2 class="contacto__title">Contáctanos</h2>
+                <form class="contacto__form" method="post" name="contactoAutoAsesor" data-netlify="true">
+                    <div class="contacto__form-group">
+                        <label for="nombre" class="contacto__label">Nombre</label>
+                        <input type="text" id="nombre" class="contacto__input" required>
+                    </div>
+                    <div class="contacto__form-group">
+                        <label for="email" class="contacto__label">Email</label>
+                        <input type="email" id="email" class="contacto__input" required>
+                    </div>
+                    <div class="contacto__form-group">
+                        <label for="mensaje" class="contacto__label">Mensaje</label>
+                        <textarea id="mensaje" class="contacto__textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="contacto__submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__section">
+                <h3>Auto Asesoría</h3>
+                <p class="footer__text">Tu mejor opción para encontrar el auto perfecto.</p>
+                <div class="footer__social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer__section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer__links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#cotizador">Cotizador</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3>Contacto</h3>
+                <ul class="footer__links">
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@autoasesoria.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; <span></span> Auto Asesoría. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        const year = new Date().getFullYear();
+        document.querySelector('.footer__bottom span').textContent = year;
+    </script>
+</body>
+</html> 
